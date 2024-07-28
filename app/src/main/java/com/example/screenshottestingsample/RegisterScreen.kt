@@ -45,7 +45,7 @@ fun RegisterScreen() {
                     onChangeSaveInfo = { }
                 )
                 Spacer(modifier = Modifier.weight(1f))
-                Register(isEnable = false, onRegisterClick = {})
+                Register(isEnable = true, onRegisterClick = {})
             }
         }
     }
@@ -124,7 +124,7 @@ private fun Register(
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+private fun GreetingPreview() {
     ScreenshotTestingSampleTheme {
         RegisterScreen()
     }
