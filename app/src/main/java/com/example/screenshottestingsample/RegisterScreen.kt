@@ -45,7 +45,7 @@ fun RegisterScreen() {
                     onChangeSaveInfo = { }
                 )
                 Spacer(modifier = Modifier.weight(1f))
-                Register(isEnable = true, onRegisterClick = {})
+                Register(isEnable = false, onRegisterClick = {})
             }
         }
     }
