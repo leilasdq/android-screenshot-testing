@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.screenshot)
+    id("io.github.takahirom.roborazzi")
 }
 
 android {
@@ -49,6 +50,7 @@ android {
         }
     }
 
+    testOptions.unitTests.isIncludeAndroidResources = true
     experimentalProperties["android.experimental.enableScreenshotTest"] = true
 }
 
@@ -70,5 +72,13 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    // screenshot testing
     screenshotTestImplementation(libs.androidx.compose.ui.tooling)
+
+    // roborazzi
+    testImplementation("androidx.compose.ui:ui-test-junit4-android")
+    testImplementation("org.robolectric:robolectric:4.10.3")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi:1.7.0-alpha-1")
+    testImplementation("io.github.takahirom.roborazzi:roborazzi-compose:1.7.0-alpha-1")
+    testImplementation("androidx.test.ext:junit-ktx:1.1.5")
 }
